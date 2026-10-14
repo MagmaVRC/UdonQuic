@@ -1,0 +1,10 @@
+<Solution>
+  <Configurations>
+    <BuildType Name="Debug" />
+    <BuildType Name="Release" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="projects/UdonQuic.Core.vcxproj" Id="4a52f30b-ce5f-4355-915c-c430acf5cf88" />
+  <Project Path="projects/UdonQuic.Native.vcxproj" Id="ebf3ec22-a4a3-4e28-b7e4-41ccb4ec6490" />
+  <Project Path="projects/UdonQuic.Tests.vcxproj" Id="c26fd801-d1ac-412d-94e0-bb1fe7e01623" />
+</Solution>

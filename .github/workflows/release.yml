@@ -1,0 +1,39 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+    env:
+      VPM_TOKEN: ${{ secrets.VPM_DISPATCH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Check version
+        shell: pwsh
+        run: |
+          $version = (Get-Content unity/dev.magmavrc.udonquic/package.json -Raw | ConvertFrom-Json).version
+          if ("v$version" -ne "${{ github.ref_name }}") { throw "Tag ${{ github.ref_name }} does not match package version $version" }
+
+      - name: Build, test and package
+        shell: pwsh
+        run: ./tools/package.ps1
+
+      - name: Publish
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "${{ github.ref_name }}" (Get-ChildItem dist -File).FullName --title "UdonQuic ${{ github.ref_name }}" --generate-notes
+
+      - name: Rebuild VPM listing
+        if: ${{ env.VPM_TOKEN != '' }}
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ env.VPM_TOKEN }}
+        run: gh workflow run build-listing.yml -R MagmaVRC/VPM

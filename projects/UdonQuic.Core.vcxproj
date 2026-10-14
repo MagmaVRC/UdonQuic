@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{4A52F30B-CE5F-4355-915C-C430ACF5CF88}</ProjectGuid>
+    <RootNamespace>UdonQuicCore</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>$(DefaultPlatformToolset)</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="PropertySheets">
+    <Import Project="UdonQuic.props" />
+  </ImportGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\UdonQuic\Optimizer.hpp" />
+    <ClInclude Include="..\include\UdonQuic\Program.hpp" />
+    <ClInclude Include="..\src\Externs.hpp" />
+    <ClInclude Include="..\src\Flow.hpp" />
+    <ClInclude Include="..\src\Fold.hpp" />
+    <ClInclude Include="..\src\IR.hpp" />
+    <ClInclude Include="..\src\Passes.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Externs.cpp" />
+    <ClCompile Include="..\src\Flow.cpp" />
+    <ClCompile Include="..\src\Fold.cpp" />
+    <ClCompile Include="..\src\IR.cpp" />
+    <ClCompile Include="..\src\Optimizer.cpp" />
+    <ClCompile Include="..\src\Passes.cpp" />
+    <ClCompile Include="..\src\Program.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

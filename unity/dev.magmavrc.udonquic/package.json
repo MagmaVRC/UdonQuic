@@ -1,0 +1,26 @@
+{
+  "name": "dev.magmavrc.udonquic",
+  "displayName": "UdonQuic",
+  "version": "0.2.0",
+  "unity": "2022.3",
+  "description": "A native Udon bytecode optimizer for VRChat worlds. Every program UdonSharp, UdonLuau or the Udon Graph stores is optimized in place right after it compiles, with no setup.",
+  "license": "MIT",
+  "keywords": [
+    "vrchat",
+    "udon",
+    "optimizer",
+    "bytecode",
+    "udonsharp",
+    "udonluau"
+  ],
+  "author": {
+    "name": "MagmaVRC",
+    "url": "https://github.com/MagmaVRC"
+  },
+  "documentationUrl": "https://github.com/MagmaVRC/UdonQuic#readme",
+  "changelogUrl": "https://github.com/MagmaVRC/UdonQuic/releases",
+  "licensesUrl": "https://github.com/MagmaVRC/UdonQuic/blob/master/LICENSE",
+  "vpmDependencies": {
+    "com.vrchat.worlds": ">=3.9.0 <4.0.0"
+  }
+}
