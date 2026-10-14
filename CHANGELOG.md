@@ -2,7 +2,7 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.2.0] - in progress
+## [0.2.0] - 2026-10-14
 
 ### Added
 - Install through the VRChat Creator Companion from `https://vpm.magmamc.dev/index.json`; releases ship the `package.json` the listing reads.
